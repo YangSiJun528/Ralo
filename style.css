@@ -1,0 +1,468 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+a {
+  text-decoration-line: none;
+  color: #000;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 32px;
+}
+nav ul {
+  display: inline-block;
+  text-align: center;
+  padding: 8px;
+}
+nav ul a{
+  margin-left: 16px;
+  position: relative;
+}
+nav ul a:hover:before{
+  transition-property: all; 
+  transition-duration: 1.2s, 3s;
+  top: 24px;
+  left: 2px;
+  position: absolute;
+  display: block;
+  content: "";
+  background-color: rgb(0, 0, 0,0.6);
+  width: 100%;
+  height: 1px;
+}
+.logo {
+  font-size: 30px;
+  font-family: 'Festive', cursive;
+}
+
+.analects-wrap:nth-child(1) .img {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),url(https://i.ytimg.com/vi/OAyyTrRP_zM/maxresdefault.jpg);
+}
+.analects-wrap:nth-child(2) .img {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),url(https://coinpan.com/files/attach/images/181338187/470/373/223/fd12ae9fdebb974559a2400d4d8649fe.jpg);
+}
+.analects-wrap:nth-child(3) .img {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),url(https://img.insight.co.kr/static/2021/01/09/700/img_20210109110431_eyiu8o0i.webp);
+}
+.analects-wrap:nth-child(4) .img {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),url(./img/namtat.PNG);
+}
+.analects-wrap:nth-child(5) .img {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),url(./img/malushue.PNG);
+}
+.analects-wrap:nth-child(6) .img {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),url(https://i.ytimg.com/vi/a_mbAGLdU7U/maxresdefault.jpg);
+}
+.analects-wrap:nth-child(7) .img {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),url(https://i.ytimg.com/vi/dvhttcbzyp0/maxresdefault.jpg);
+}
+.analects-wrap:nth-child(8) .img {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),url(./img/bullfun.PNG);
+}
+
+.analects{
+  position: relative;
+  height:600px;
+  width: 1200px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.analects .img{
+  background-size: cover;
+  width: 100%;
+  height:100%;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.analects .content{
+  font-family: 'Nanum Myeongjo', serif;
+  top: 120px;
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  line-height: 56px;
+  font-size: 52px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+.analects-wrap:nth-child(n) .content{
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: all 2.5s;
+}
+.analects-wrap:nth-child(2n) .content{
+  transform: translateX(200px);
+}
+.analects-wrap:nth-child(3n) .content{
+  transform: translateY(-200px);
+}
+.analects-wrap .show .content{
+    transform: translateX(0);
+    opacity: 1;
+}
+.analects-wrap .show .img{
+  transition: all 1.5s;
+}
+.analects-wrap .show .img{
+  filter: blur(10px);
+}
+.analects .info{
+  font-family: 'Nanum Myeongjo', serif;
+  top: 180px;
+  position: relative;
+  z-index: 9;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  line-height: 38px;
+  font-size: 32px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+}
+.analects-wrap:nth-child(n) .info{
+  opacity: 0;
+  transform: translateX(200px);
+  transition: all 2.5s;
+}
+.analects-wrap:nth-child(2n) .info{
+  transform: translateX(-200px);
+}
+.analects-wrap:nth-child(3n) .info{
+  transform: translateY(200px);
+}
+.analects-wrap .show .info{
+    transform: translateX(0);
+    opacity: 1;
+}
+.analects-wrap {
+  padding: 120px 0;
+  position: relative;
+  z-index: 5;
+}
+#analects-main {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.history-wrap {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.contents-wrap {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.contents {
+  width: 100%;
+  padding: 50vh 0 20vh;
+  overflow: hidden;
+}
+.content-item {
+  margin: 10vh 0 70vh;
+  max-width: 90vw;
+  position: relative;
+}
+.content-item:nth-child(even){
+  margin-left: auto;
+}
+.content-item-num {
+  font-size: 14vw;
+  line-height: 1;
+  font-weight: 100;
+  color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: -13vw; right: 3vw;
+}
+.content-item:nth-child(even) .content-item-num {
+  left: 3vw;
+}
+.content-item-title {
+  text-align: right;
+  font-weight: 300;
+  text-transform: capitalize;
+  padding-bottom: 0.8vw;
+  font-size: 1.5rem;
+}
+
+.content-item-desc {
+  font-size: 48px;
+  line-height: 1.6;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: right;
+  margin-top: -8vw;
+  position: relative;
+  z-index: 20
+}
+.content-item:nth-child(even) .content-item-desc {
+  text-align: left;
+  margin-right: 0;
+}
+.goto-wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+.grid {
+  position: relative;
+  display:flex;
+  margin: 0 auto;
+  height: 1000px;
+  width: 800px;
+  background-color: white;
+}
+main {
+  width: 100%;
+  height: 100%;
+}
+.grid-content {
+  transition: all ease 0.3s;
+}
+.grid-content img{
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  z-index: 20;
+}
+.grid-content:hover {
+  transform: scale( 0.95 );
+}
+.gird1 {
+  position:absolute;
+  background-color: #9146FF;
+  width: 400px;
+  height: 600px;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+}
+.gird1:after {
+  content: "";
+  position:absolute;
+  background-color: white;
+  width: 200px;
+  height: 400px;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+.gird2 {
+  position:absolute;
+  width: 400px;
+  height: 400px;
+  z-index: 2;
+  left: 410px;
+  bottom: 0px;
+}
+.gird2:after {
+  content: "";
+  position:absolute;
+  width: 390px;
+  height: 390px;
+  background-image: linear-gradient( rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),url(https://w.namu.la/s/eef6347d4d73181f644798e66f41e8d401e6456cb6900dc18e2adea3063786d6899111f5402ce000614fd34a4f33f74bc100a3715644e98a3a16d523cc063882073872fff49040f99c43728a458e698799bcac950dc918c05b2634e760b1fcbd);
+  z-index: 1;
+  filter: blur(10px);
+  left: 0px;
+  bottom: 0px;
+}
+.gird3 {
+  position:absolute;
+  background-color: #FF0000;
+  width: 200px;
+  height: 800px;
+  z-index: 2;
+  left: 200px;
+  bottom: 200px;
+}
+.gird4 {
+  position:absolute;
+  background-color: #8051F4;
+  width: 400px;
+  height: 600px;
+  left: 400px;
+  bottom: 400px;
+}
+.gird4:after {
+  content: "";
+  position:absolute;
+  background-color: white;
+  width: 200px;
+  height: 200px;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+.gird4:before {
+  content: "";
+  position:absolute;
+  background-color: white;
+  width: 200px;
+  height: 200px;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.gird1 img{
+  margin-top: 400px;
+}
+.gird2 img{
+  margin-top: 100px;
+}
+.gird3 img{
+  margin-top: 300px;
+}
+.gird4 img{
+  margin-top: 200px;
+}
+.main-main{
+  width: 100%;
+  font-family: 'Jua', sans-serif;
+}
+.jumbotron-content {
+  position: relative;
+  margin: 0 auto;
+  width: 1300px;
+  height: 100%;
+}
+.main-wrap{
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0, 0, 0, 0.05);
+}
+.main-container{
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  background-color:white;
+}
+.jumbotron {
+  background-color:rgba(0, 0, 0, 0.7);
+  height:400px;
+  margin: 0 auto;
+  width: 100%;
+}
+.jumbotron p{
+  font-size: 96px;
+  color:white;
+  font-family: 'Festive', cursive;
+  display:block;
+  position: absolute;
+  top: 160px;
+  left: 600px;
+  z-index: 3;
+}
+.jumbotron .img img{
+  position: absolute;
+  left: 50px;
+  top: 0;
+  transition: all ease 3s;
+  opacity: 0;
+  width:1200px;
+  height:400px;
+  object-fit: cover;
+  z-index: 2;
+}
+.jumbotron img.show{
+  opacity: 1;
+}
+
+.jumbotron .back-img img{
+  filter: blur(30px);
+  position: absolute;
+  left: 0px;
+  transition: all ease 3s;
+  opacity: 0;
+  width:1300px;
+  height:420px;
+  object-fit: cover;
+  z-index: 1;
+}
+.jumbotron img.show{
+  opacity: 1;
+}
+.info {
+  padding:60px;
+  font-size: 28px;
+}
+.info :nth-child(2) {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+.info img{
+  width: 320px;
+  float: left;
+}
+.info p {
+  margin-left: 340px;
+  line-height: 32px;
+}
+.summary {
+  padding:60px;
+}
+.summary h1{
+  font-size: 3em;
+}
+.summary p{
+  margin-left: 8px;
+  font-size: 26px;
+  line-height:28px;
+}
+.signature {
+  padding:60px;
+}
+.signature h1{
+  font-size: 3em;
+}
+.signature p{
+  margin-left: 8px;
+  font-size: 26px;
+  line-height:28px;
+}
